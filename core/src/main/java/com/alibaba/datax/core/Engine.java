@@ -14,6 +14,7 @@ import com.alibaba.datax.core.util.ExceptionTracker;
 import com.alibaba.datax.core.util.FrameworkErrorCode;
 import com.alibaba.datax.core.util.container.CoreConstant;
 import com.alibaba.datax.core.util.container.LoadUtil;
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.cli.BasicParser;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
@@ -198,7 +199,16 @@ public class Engine {
         return -1;
     }
 
+
+    static {
+        System.setProperty("datax.home","/Users/huqingfeng/Documents/components/datax");
+    }
+
     public static void main(String[] args) throws Exception {
+        // for test
+        args =new String[]{"-mode","standalone","-jobid","100","-job","/Users/huqingfeng/Downloads/conf.json"};
+        LOG.info("args -> {}", JSON.toJSONString(args));
+
         int exitCode = 0;
         try {
             Engine.entry(args);
