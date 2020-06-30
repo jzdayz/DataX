@@ -206,7 +206,7 @@ public class Engine {
 
     public static void main(String[] args) throws Exception {
         // for test
-        args =new String[]{"-mode","standalone","-jobid","100","-job","/Users/huqingfeng/Downloads/conf.json"};
+        args =new String[]{"-mode","standalone","-jobid","100","-job","/Users/huqingfeng/Downloads/test_datax.json"};
         LOG.info("args -> {}", JSON.toJSONString(args));
 
         int exitCode = 0;
